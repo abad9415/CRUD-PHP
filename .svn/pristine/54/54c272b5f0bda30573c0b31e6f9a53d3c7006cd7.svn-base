@@ -1,0 +1,73 @@
+<div class=""> 
+<table>
+        <thead>
+          <tr>
+              <th></th>
+              <th>No.</th>
+              <th>Nombre</th>
+              <th>Puesto</th>
+              <th>Salario</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><a class="dropdown-button waves-effect waves-light" data-activates='dropdown1'><i class="material-icons">more_vert</i></a></td>
+            <ul id='dropdown1' class='dropdown-content'>
+                <li><a onClick="modificar(1);">Modificar</a></li>
+                <li><a onClick="eliminar(1);">Eliminar</a></li>
+            </ul>
+            <td>1</td>
+            <td>Eduardo Abad</td>
+            <td>Reclutador</td>
+            <td>$10,000</td>
+          </tr>
+          <tr>
+            <td><a class="dropdown-button waves-effect waves-light" data-activates='dropdown2'><i class="material-icons">more_vert</i></a></td>
+            <ul id='dropdown2' class='dropdown-content'>
+                <li><a onClick="modificar(2);">Modificar</a></li>
+                <li><a onClick="eliminar(2);">Eliminar</a></li>
+            </ul>
+            <td>2</td>
+            <td>Pedro Lopez</td>
+            <td>Diseñador</td>
+            <td>$10,000</td>
+          </tr>
+          <tr>
+            <td><a class="dropdown-button waves-effect waves-light" data-activates='dropdown3'><i class="material-icons">more_vert</i></a></td>
+            <ul id='dropdown3' class='dropdown-content'>
+                <li><a onClick="modificar(3);">Modificar</a></li>
+                <li><a onClick="eliminar(3);">Eliminar</a></li>
+            </ul>
+            <td>3</td>
+            <td>Fernanda Ortega</td>
+            <td>Diseñador</td>
+            <td>$10,000</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large waves-effect waves-light blue darken-2">
+          <i class="material-icons">add</i>
+        </a>
+     </div>
+<script>
+  function modificar(idEmpleado){
+    alert(idEmpleado)
+  } 
+  function eliminar(idEmpleado){
+    alert(idEmpleado)
+  }
+ $('.dropdown-button').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      constrainWidth: false, // Does not change width of dropdown to that of the activator
+      gutter: 0, // Spacing from edge
+      belowOrigin: false, // Displays dropdown below the button
+      alignment: 'left', // Displays dropdown with edge aligned to the left of button
+      stopPropagation: false // Stops event propagation
+    }
+  );
+</script>

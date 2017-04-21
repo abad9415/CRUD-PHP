@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRUD</title>
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/materialize.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="grey lighten-3">
+  <nav class="blue darken-2">
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo navLogo">Empleados</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li class="btnEmpleados"><a>Empleados</a></li>
+        <li class="btnLenguajes"><a>Lenguajes</a></li>
+      </ul>
+      <ul class="side-nav grey darken-4" id="mobile-demo">
+        <ul class="collection grey darken-3 collectionSideNav">
+          <li class="collection-item avatar grey darken-3">
+            <img src="img/no-img.png" alt="" class="circle">
+            <span class="title grey-text text-lighten-5">Eduardo Abad Tinoco</span>
+            <p>Reclutador</p>
+          </li>
+        </ul>
+        <li class="btnEmpleados"><a class="waves-effect waves-light grey-text text-lighten-5">Empleados</a></li>
+        <li class="btnLenguajes"><a class="waves-effect waves-light grey-text text-lighten-5">Lenguajes</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="content">
+  
+  </div>
+  <script src="js/jQuery.js"></script>
+  <script src="js/materialize.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      $(".btnEmpleados").click(function() {
+        alert("Empleadois")
+      });
+      $(".btnLenguajes").click(function() {
+        alert("Lenguejs")
+      });
+      $(".button-collapse").sideNav();
+    })
+  </script>
+</body>
+
+</html>

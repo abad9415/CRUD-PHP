@@ -1,0 +1,62 @@
+<?php
+class empleados{
+	var $id;
+  
+  function __construct($datosConexionBD){
+    $this->datosConexionBD=$datosConexionBD;
+  }
+  public function consultarEmpleados(){
+        try {
+            $conexion = new PDO('mysql:host='.$this->datosConexionBD[0].';dbname='.$this->datosConexionBD[3], $this->datosConexionBD[1], $this->datosConexionBD[2],array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+            $resultado = $conexion->prepare("SELECT * FROM tbl_empleado");
+          $resultado->execute();
+            return $resultado;
+        } catch (PDOException $e) {
+            return false;
+        }
+      }
+	 public function altaEmpleado(){
+					try {
+						$conexion = new PDO('mysql:host='.$this->datosConexionBD[0].';dbname='.$this->datosConexionBD[3], $this->datosConexionBD[1], $this->datosConexionBD[2]);
+						$conexion -> exec("set names utf8");
+						$query = "INSERT INTO tbl_empleado
+								(nombre,
+								edad,
+								direccion,
+								estado,
+                fecha_nacimiento,
+                telefono)
+								VALUES ('".$this->nombre."',
+								'".$this->edad."',
+								'".$this->direccion."',
+								'".$this->estado."',
+								'".$this->fecha_nacimiento."',
+								'".$this->telefono."')";
+						$statement = $conexion->prepare($query);
+						$statement->execute();
+						return $conexion->lastInsertId('id');
+					}catch(PDOException $e){
+						return "Error: " . $e->getMessage();
+					}
+   }
+	public function altaDatosEconomicosEmpleados(){
+					try {
+						$conexion = new PDO('mysql:host='.$this->datosConexionBD[0].';dbname='.$this->datosConexionBD[3], $this->datosConexionBD[1], $this->datosConexionBD[2]);
+						$conexion -> exec("set names utf8");
+						$query = "INSERT INTO tbl_datos_economicos
+								(puesto,
+								salario,
+								tbl_empleado_id)
+								VALUES ('".$this->puesto."',
+								'".$this->salario."',
+								'".$this->tbl_empleado_id."')";
+						$statement = $conexion->prepare($query);
+						$statement->execute();
+						return "Empleado Guardado";
+					}catch(PDOException $e){
+						return "Error: " . $e->getMessage();
+					}
+   }
+	
+}
+  ?>

@@ -1,0 +1,6 @@
+<?php
+    $datosConexionBD[0] = 'pruebas.ecommercetests.com'; // Colocamos el servidor donde está MySql
+		$datosConexionBD[1] = 'pruebasuser'; // Colocamos el usuario de Mysql
+		$datosConexionBD[2] = '814H0sNjqB0'; // Colocamos la contraseña del usuario de Mysql
+		$datosConexionBD[3] = 'ecommercepruebas'; // Colocamos el nombre de la BD
+?>

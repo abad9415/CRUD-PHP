@@ -1,0 +1,7 @@
+.navLogo{
+  margin-left: 10px;
+}
+.collectionSideNav{
+  border: none;
+  margin-top: 0px;
+}
